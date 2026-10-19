@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Message Priority Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="badge">
+            NLP + Machine Learning
+        </div>
+
+        <h1>
+            Smart Message Priority Analyzer
+        </h1>
+
+        <p>
+            NLP-Based Email/Message Priority Classification
+            & Action Recommendation System
+        </p>
+
+    </header>
+
+
+    <!-- INPUT -->
+
+    <section class="input-card">
+
+        <h2>Analyze Your Message</h2>
+
+        <p class="description">
+            Paste an email or message below to identify
+            its priority, category and recommended action.
+        </p>
+
+        <textarea
+            id="messageInput"
+            placeholder="Paste your email or message here..."
+        ></textarea>
+
+        <button onclick="analyzeMessage()">
+            Analyze Message
+        </button>
+
+        <p id="errorMessage"></p>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="results">
+
+        <!-- PRIORITY -->
+
+        <div class="result-card">
+
+            <div class="card-title">
+                Priority
+            </div>
+
+            <div id="priority"
+                 class="result-value">
+                —
+            </div>
+
+            <div id="priorityConfidence"
+                 class="confidence">
+                Confidence: —
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="result-card">
+
+            <div class="card-title">
+                Category
+            </div>
+
+            <div id="category"
+                 class="result-value">
+                —
+            </div>
+
+            <div id="categoryConfidence"
+                 class="confidence">
+                Confidence: —
+            </div>
+
+        </div>
+
+
+        <!-- ACTION -->
+
+        <div class="result-card action-card">
+
+            <div class="card-title">
+                Recommended Action
+            </div>
+
+            <div id="action"
+                 class="action-text">
+                —
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPORTANT FACTORS -->
+
+    <section class="factors-card">
+
+        <h2>Important Factors</h2>
+
+        <ul id="factorsList">
+
+            <li>
+                Analyze a message to see important factors.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Powered by TF-IDF & Linear SVM
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
